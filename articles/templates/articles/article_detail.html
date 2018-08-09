@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<div class="article-detail">
+  <div class="article">
+    <img src="{{ article.thumb.url }}"  />
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.body }}</p>
+    <p>{{ article.date }}</p>
+    <h2><a href="{% url 'articles:list' %}">Back</a></h2>
+  </div>
+</div>
+
+{% endblock %}

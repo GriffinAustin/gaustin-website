@@ -1,0 +1,40 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <title>Griffin Austin</title>
+  </head>
+  <body>
+    <header class="wrapper">
+      <nav>
+        <ul>
+          {% if user.is_authenticated %}
+          <li>
+            <form class="logout-link" action="/accounts/logout/" method="post">
+              {% csrf_token %}
+              <button type="submit" name="">Log Out</button>
+            </form>
+          </li>
+          <li>
+            <a href="/articles/create/">New Article</a>
+          </li>
+          {% else %}
+            <li>
+              <a href="/accounts/login/">Log In</a>
+            </li>
+            <li>
+              <a href="/accounts/signup/">Sign Up</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    <div class="wrapper">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
