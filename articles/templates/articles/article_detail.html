@@ -1,10 +1,15 @@
 {% extends 'base_layout.html' %}
+{% load static from staticfiles %}
+
+{% block headcont %}
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+{% endblock %}
 
 {% block content %}
 
 <div class="article-detail">
   <div class="article">
-    <img src="{{ article.thumb.url }}"  />
+    <img src="{{ article.thumb.url }}" />
     <h2>{{ article.title }}</h2>
     <p>{{ article.body }}</p>
     <p>{{ article.date }}</p>
