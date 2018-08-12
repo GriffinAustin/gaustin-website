@@ -15,10 +15,11 @@
   <body>
     <header class="wrapper">
       <nav>
-        <ul>
-          <li>
+        <a href="/"><img src="{% static 'media/default.png' %}" width="64em" alt="gaustin logo" /></a>
+        <ul class="nav">
+          <!--<li>
             <a href="/"><img src="{% static 'media/default.png' %}" width="64em" alt="gaustin logo" /></a>
-          </li>
+          </li>-->
           {% if user.is_authenticated %}
           <li>
 
@@ -52,6 +53,12 @@
     <div class="wrapper">
       {% block content %}
       {% endblock %}
+    </div>
+    <div id="footer">
+      <!-- Copyright -->
+        <ul class="copyright">
+          <li>&copy; Griffin Austin. All rights reserved.</li>
+        </ul>
     </div>
   </body>
 </html>

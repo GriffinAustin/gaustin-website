@@ -6,15 +6,18 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Article List</h1>
+  <h1 class="article-header">Article List</h1>
   <div class="articles">
     {% for article in articles %}
-      <div class="article">
-        <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{ article.title }}</a></h2>
-        <p>{{ article.snippet }}</p>
+    <a href="{% url 'articles:detail' slug=article.slug %}">
+      <div class="article" href="{% url 'articles:detail' slug=article.slug %}" >
+        <h2>{{ article.title }}</h2>
+        <!--<p>{{ article.snippet }}</p>-->
         <p>{{ article.date }}</p>
+        <img class="thumb" src="{{ article.thumb.url }}" />
         <p class="author">By {{ article.author.username }}</p>
       </div>
+    </a>
     {% endfor %}
   </div>
 {% endblock %}

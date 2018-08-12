@@ -9,10 +9,13 @@
 
 <div class="article-detail">
   <div class="article">
-    <img src="{{ article.thumb.url }}" />
-    <h2>{{ article.title }}</h2>
-    <p>{{ article.body|safe }}</p>
-    <p>{{ article.date }}</p>
+    <img class="article-thumb" src="{{ article.thumb.url }}" />
+    <h2 class="article-title">{{ article.title }}</h2>
+    <p class="detail-author">by {{ article.author }}</p>
+    <p class="date">{{ article.date }}</p>
+    <div class="article-content">
+      <p>{{ article.body|safe }}</p>
+    </div>
     <h2><a href="{% url 'articles:list' %}">Back</a></h2>
   </div>
 </div>

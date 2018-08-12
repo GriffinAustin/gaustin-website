@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5{
 
 .wrapper{
   max-width: 960px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .wrapper li a{
@@ -22,7 +22,8 @@ h1, h2, h3, h4, h5{
 
 div.wrapper h1{
   text-align: center;
-  margin: 100px auto;
+  margin: auto;
+  margin-bottom: 8px;
   font-size: 2.4em;
 }
 
@@ -30,14 +31,19 @@ div.wrapper h1{
   color: #708090;
 }
 
-header{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/*header{
+  display: inline-block;
   padding: 20px 0;
+  text-align: center;
 }
 
 nav{
   justify-self: end;
+  text-align: center;
+}
+
+nav ul{
+  text-align: center;
 }
 
 nav li{
@@ -51,12 +57,52 @@ nav button{
   cursor: pointer;
   border: 0;
   font-size: 1em;
+}*/
+
+.nav{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nav li{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.nav button{
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  font-size: 1em;
+}
+
+nav img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
 }
 
 .articles{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
+}
+
+.articles a{
+  text-decoration: none;
+  color: #708090;
+}
+
+.articles a:hover{
+  color: #e27689;
+}
+
+.articles .article:hover{
+  border-color: #e27689;
 }
 
 .article{
@@ -78,6 +124,11 @@ nav button{
   margin: 0;
 }
 
+.article .thumb{
+  max-width: 16em;
+  max-height: 9em;
+}
+
 .article a{
   text-decoration: none;
   color: #708090;
@@ -97,7 +148,7 @@ nav button{
 
 .article-detail .article h2{
   text-align: center;
-  margin: 20px auto;
+  margin-top: 20px;
   font-size: 2em;
 }
 
@@ -152,4 +203,59 @@ nav button{
   background: #fff;
   color: #708090;
   cursor: pointer;
+}
+
+#footer {
+  text-align: center;
+  background-color: #dce3e2;
+  padding: 3em 0 4em 0;
+  box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
+  font-size: 0.8em;
+  margin-top: 16px;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: bottom;
+}
+
+#footer .copyright {
+  cursor: default;
+  margin: 0;
+}
+
+#footer .copyright li {
+  display: inline-block;
+  line-height: 1em;
+  border-left: solid 1px rgba(128, 128, 128, 0.35);
+  padding: 0 0 0 0.5em;
+  margin: 0 0 0 0.5em;
+}
+
+#footer .copyright li:first-child {
+  border-left: 0;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+@media screen and (max-width: 736px){
+  .articles{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  #footer .copyright li {
+    display: block;
+    line-height: 1.25em;
+    border: 0;
+    padding: 0;
+    margin: 1em 0 0 0;
+  }
+
+  #footer .copyright li:first-child {
+    margin-top: 0;
+  }
+}
+
+.article-header{
+  margin-top: 0;
+  margin-bottom: 0;
 }
