@@ -3,6 +3,8 @@ from .models import Article
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
+from .scripts.sluggify import sluggify
+import datetime
 
 def article_list(request):
     articles = Article.objects.all().order_by('date')
@@ -19,9 +21,13 @@ def article_create(request):
     if request.method == "POST":
         form = forms.CreateArticle(request.POST, request.FILES)
         if form.is_valid():
-            #Save article to db
+            # Save article to db
             instance = form.save(commit=False)
             instance.author = request.user
+            instance.slug = sluggify(instance.title)
+            notvalid = len(Article.objects.all().filter(slug=instance.slug))
+            while len(Article.objects.all().filter(slug=instance.slug)) != 0:
+                instance.slug += "-a"
             instance.save()
             return redirect("articles:list")
     else:
