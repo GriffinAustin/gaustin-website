@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: block;
+}
+
+.error-page * {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20vh;
+}
+
+.error-page h1{
+  font-weight: bold;
+}
+
+.error-page a {
+  text-decoration: none;
+  color: #d6d6d6;
+}
+
+.error-page p {
+  font-size: 5vh;
+}
+
+.error-page h2 {
+  font-weight: bold;
+  color: #d6d6d6;
+}

@@ -47,6 +47,11 @@
             <a href="/articles/create/">New Article</a>
           </li>
           {% endif %}
+          {% if user.is_superuser %}
+          <li>
+            <a href="/admin/" target="_blank" >Admin Panel</a>
+          </li>
+          {% endif %}
         </ul>
       </nav>
     </header>
