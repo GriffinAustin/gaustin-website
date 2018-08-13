@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Griffin Austin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="shortcut icon" href="{% static 'media/true_favicon.ico' %}" />
     <link rel="apple-touch-icon" href="{% static 'media/true_favicon.ico' %}" />
     <link rel="stylesheet" href="{%static 'css/blog.css'%}">
     {% block headcont %}
     {% endblock %}
+    <title>Griffin Austin</title>
   </head>
 
   <body>
@@ -22,11 +22,13 @@
           </li>-->
           {% if user.is_authenticated %}
           <li>
-
               <form class="logout-link" action="/accounts/logout/" method="post">
                 {% csrf_token %}
                 <button type="submit" name=""><p>Log Out</p></button>
               </form>
+          </li>
+          <li>
+            <a href="/accounts/profile/">Profile</a>
           </li>
           {% else %}
             <li>

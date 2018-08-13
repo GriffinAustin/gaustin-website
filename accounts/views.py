@@ -33,3 +33,6 @@ def logout_view(request):
     if request.method == "POST":
         logout(request)
         return redirect("articles:list")
+
+def profile_view(request):
+    return render(request, "accounts/profile.html")
